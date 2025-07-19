@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Conference ticket generator</title>
+</head>
+
+<body>
+  <!-- Background Patterns -->
+  <div class="pattern-lines-top">
+    <img src="./assets/images/pattern-lines.svg" alt="" aria-hidden="true">
+  </div>
+
+  <div class="pattern-squiggly-bottom-left">
+    <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="" aria-hidden="true"
+      class="desktop-pattern">
+    <img src="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="" aria-hidden="true"
+      class="mobile-pattern">
+  </div>
+
+  <div class="pattern-squiggly-top-right">
+    <img src="./assets/images/pattern-squiggly-line-top.svg" alt="" aria-hidden="true">
+  </div>
+
+  <main class="container">
+    <!-- Form Section -->
+    <section class="form-section" id="form-section">
+      <div class="header">
+        <img src="./assets/images/logo-full.svg" alt="Coding Conf" class="logo-full">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </div>
+
+      <form class="ticket-form" id="ticket-form" novalidate>
+        <div class="form-group">
+          <label for="avatar-upload">Upload Avatar</label>
+          <div class="upload-area" id="upload-area">
+            <input type="file" id="avatar-upload" name="avatar" accept="image/*" aria-describedby="avatar-error">
+            <div class="upload-content">
+              <img src="./assets/images/icon-upload.svg" alt="" class="upload-icon">
+              <span class="upload-text">Drag and drop or click to upload</span>
+            </div>
+            <div class="upload-preview" id="upload-preview" style="display: none;">
+              <img id="preview-image" alt="Avatar preview">
+              <div class="preview-actions">
+                <button type="button" class="preview-btn remove-btn" id="remove-image">Remove Image</button>
+                <button type="button" class="preview-btn change-btn" id="change-image">Change Image</button>
+              </div>
+            </div>
+          </div>
+          <div class="error-message" id="avatar-error" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="fullName" aria-describedby="name-error" required>
+          <div class="error-message" id="name-error" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" aria-describedby="email-error" placeholder="joe@example.com"
+            required>
+          <div class="error-message" id="email-error" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="github-username">GitHub Username</label>
+          <input type="text" id="github-username" placeholder="@githubUsername" name="githubUsername"
+            aria-describedby="github-error" required>
+          <div class="error-message" id="github-error" role="alert"></div>
+        </div>
+
+        <button type="submit" class="submit-btn">Generate My Ticket</button>
+      </form>
+    </section>
+    <!-- TICKET PREVIEW SECTION -->
+    <section class="confirmation-section" id="ticketPreview" style="display: none;">
+      <div class="ticket confirmation-content">
+        <div class="ticket-header">
+          <div class="logo-and-title">
+            <img src="assets/images/logo-mark.svg" class="logo-mark" />
+            <span class="event-name">Coding Conf</span>
+          </div>
+          <span class="event-details">Jan 31, 2025 / Austin, TX</span>
+        </div>
+        <div class="ticket-body">
+          <img id="ticketAvatar" class="avatar" src="" alt="Attendee Avatar" />
+          <div class="attendee-info">
+            <div class="name" id="ticketName"></div>
+            <div class="handle" id="ticketEmail"></div>
+          </div>
+        </div>
+        <div class="ticket-code">#CTG2025</div>
+      </div>
+    </section>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section" id="confirmation-section" style="display: none;">
+      <div class="confirmation-content">
+        <div class="message-header">
+          <img src="./assets/images/logo-mark.svg" alt="Coding Conf Logo" class="logo-mark">
+          <span class="event-name">Coding Conf</span>
+        </div>
+
+        <h1>Congrats, <span class="highlight" id="congrats-name">Your Name</span>!<br>Your ticket is ready.</h1>
+        <p>We've emailed your ticket to<br><span class="email" id="congrats-email">your@email.com</span> and will send
+          updates in<br>the run up to the event.</p>
+
+        <div class="ticket" id="generated-ticket">
+          <div class="ticket-header">
+            <div class="logo-and-title">
+              <img src="./assets/images/logo-mark.svg" alt="Coding Conf Logo">
+              <span class="event-name">Coding Conf</span>
+            </div>
+            <span class="event-details">Jan 31, 2025 / Austin, TX</span>
+          </div>
+          <div class="ticket-body">
+            <img id="ticket-avatar" src="./assets/images/image-avatar.jpg" alt="Avatar" class="avatar">
+            <div class="attendee-info">
+              <p class="name" id="ticket-name">Your Name</p>
+              <p class="handle" id="ticket-handle">@yourusername</p>
+            </div>
+          </div>
+          <div class="ticket-code" id="ticket-code">#01609</div>
+        </div>
+
+        <div class="ticket-actions">
+          <button class="action-btn primary" id="download-ticket">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7,10 12,15 17,10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download Ticket
+          </button>
+
+          <button class="action-btn secondary" id="share-ticket">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+            Share
+          </button>
+
+          <button class="action-btn secondary" id="print-ticket">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6,9 6,2 18,2 18,9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect x="6" y="14" width="12" height="8" />
+            </svg>
+            Print
+          </button>
+
+          <button class="action-btn tertiary" id="create-another">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            Create Another Ticket
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/sharnjeet21/">Sharnjeet Singh</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
