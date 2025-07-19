@@ -12,7 +12,6 @@ This is a solution to the **[Conference Ticket Generator challenge](https://www.
 - [Built With](#built-with)
 - [What I Learned](#what-i-learned)
 - [Continued Development](#continued-development)
-- [Useful Resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -47,6 +46,15 @@ Users should be able to:
 
 *Generated conference ticket with user details*
 
+---
+
+## 🔗 Links
+
+- **Live Demo**: [Conference Ticket Generator](https://conference-ticket-generator-initial.vercel.app/)
+- **Solution URL**: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/conference-ticket-generator-lm9QCl8Ry0)
+- **Challenge URL**: [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w)
+
+---
 
 ## 🔨 My Process
 
@@ -97,22 +105,13 @@ In future versions, I plan to:
 
 ---
 
-## 📚 Useful Resources
-
-- [MDN Web Docs](https://developer.mozilla.org/) — Reference for `FileReader`, ARIA, validation
-- [CSS Tricks – Vertical Writing](https://css-tricks.com/almanac/properties/w/writing-mode/) — Helped me rotate the ticket number
-- [A11y Project](https://www.a11yproject.com/) — For accessibility best practices
-
----
-
 ## 👤 Author
 
-- Website: [Your Portfolio or Website]
-- Frontend Mentor: [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter: [@yourusername](https://twitter.com/yourusername)
+- Website: https://sharn-portfolio.vercel.app/
+- Frontend Mentor: [@sharnjeet21](https://www.frontendmentor.io/profile/sharnjeet21)
 
 ---
 
 ## 🙏 Acknowledgments
 
-Special thanks to **Frontend Mentor** for creating such a well-structured and realistic challenge. Also big shoutout to [OpenAI ChatGPT](https://openai.com/chatgpt) for helping troubleshoot avatar upload logic!
+Special thanks to **Frontend Mentor** for such a well-structured and realistic challenge.
