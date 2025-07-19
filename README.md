@@ -1,6 +1,6 @@
 # 🎟️ Frontend Mentor - Conference Ticket Generator Solution
 
-This is a solution to the **[Conference Ticket Generator challenge](https://www.frontendmentor.io/challenges/conference-ticket-generator-8D6WZ0UmlW)** on Frontend Mentor. It helps improve form validation, accessibility, and responsive UI skills by building a realistic ticket generation form with live preview.
+This is a solution to the **[Conference Ticket Generator challenge](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w)** on Frontend Mentor. It helps improve form validation, accessibility, and responsive UI skills by building a realistic ticket generation form with live preview.
 
 ---
 
